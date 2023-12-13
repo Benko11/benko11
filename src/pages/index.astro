@@ -1,7 +1,6 @@
 ---
-import Greeting from '../components/Greeting';
 import Avatar from '../assets/Benson-Dunwoody-Looking-Cool.png';
-import {Image} from 'astro:assets'
+import '../css/global.css';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -28,9 +27,9 @@ import {Image} from 'astro:assets'
 				</p>
 			</div>
 			<img
-			  src={Avatar.src}
-			  alt=""
-			  class="w-full md:w-60 h-full md:ml-auto rounded"
+				src={Avatar.src}
+				alt=""
+				class="w-full md:w-60 h-full md:ml-auto rounded"
 			/>
 		  </div>
 	</div>
