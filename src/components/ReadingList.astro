@@ -1,3 +1,10 @@
 ---
+const raw = await fetch(`${import.meta.env.SERVER_URL}/data/reading-list.txt`);
+const data = await raw.text();
+const books = data.split('\n').filter(item => item !== '').map(line => line.split(';').map(item => item.trim()))
+console.log(import.meta.env.SERVER_URL)
 ---
-<p>Reading list</p>
+
+<div class="flex flex-col gap-2 text-sm mt-4">
+{books.map(book => <a href={book[1]} target="_blank" class="block text-bluom-light underline hover:no-underline hover:text-bluom-lighter focus:no-underline focus:text-bluom-lighter">{book[0]}</a>)}
+</div>
