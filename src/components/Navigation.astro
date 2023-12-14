@@ -1,11 +1,21 @@
 ---
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faTumblr} from '@fortawesome/free-brands-svg-icons'
-import NavigationItem from './Navigation/NavigationItem.astro'
+import NavigationItemDesktop from './Navigation/NavigationItemDesktop.astro'
 import { faFlask, faPenNib } from '@fortawesome/free-solid-svg-icons'
+import NavigationItemMobile from "./Navigation/NavigationItemMobile.astro";
+
+const links = [
+    {icon: faTumblr, link: 'https://666rigbys.tumblr.com', label: "Tumblr"},
+    {icon: faPenNib, link: '#', label: "Blog"},
+    {icon: faFlask, link: '#', label: "Lab"},
+]
 ---
-<div class="fixed right-0 top-0 flex flex-row-reverse font-sans-serif">
-    <NavigationItem icon={faTumblr} link="https://666rigbys.tumblr.com" label="Tumblr" />
-    <NavigationItem icon={faPenNib} link="#" label="Blog" />
-    <NavigationItem icon={faFlask} link="#" label="Lab" />
+<div class="hidden fixed right-0 top-0 md:flex flex-row-reverse font-sans-serif">
+    {links.map(link => <NavigationItemDesktop icon={link.icon} link={link.link} label={link.label} />)}
+</div>
+<div class="flex fixed md:hidden bottom-0 left-0 bg-black text-bluom-light w-full">
+    <div class="mx-auto flex flex-row-reverse">
+        {links.map(link => <NavigationItemMobile icon={link.icon} link={link.link} label={link.label} />)}
+    </div>
 </div>

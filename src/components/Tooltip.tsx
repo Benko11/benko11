@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 interface TooltipProps {
-  children: React.JSXNode[];
+  children: React.ReactNode;
   label: string;
 }
 
@@ -18,7 +18,7 @@ export default function Tooltip({ children, label }: TooltipProps) {
       <div
         className={`${
           show ? "block" : "hidden"
-        } text-bluom-light bg-black text-xs p-2 rounded -mt-6 select-none`}
+        } text-bluom-light bg-black text-xs p-2 rounded -mt-5 select-none`}
       >
         {label}
       </div>

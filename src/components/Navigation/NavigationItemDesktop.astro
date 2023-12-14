@@ -1,0 +1,10 @@
+---
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Tooltip from "../Tooltip";
+const {icon, link, label} = Astro.props; 
+---
+<Tooltip client:load label={label}>
+    <a href={link} target={link.includes('http') ? '_blank' : '_self'} class="py-8 px-6 block text-bluom-light hover:text-bluom-lighter focus:text-bluom-lighter outline-none group">
+        <FontAwesomeIcon icon={icon} className="transition-all group-hover:scale-110 group-focus-visible:scale-110 h-6" />
+    </a>
+</Tooltip>
