@@ -1,13 +1,15 @@
 ---
 import Avatar from '../assets/Benson-Dunwoody-Looking-Cool.png';
 import IndexLayout from '../layouts/IndexLayout.astro'
+import ReadingList from '../components/ReadingList.astro';
 ---
 <IndexLayout>
 	<h1 class="font-bold text-3xl">benko11</h1>
 	<div class="flex font-lg gap-16 leading-7 mt-4 flex-col md:flex-row">
 		<div class="flex flex-col gap-8">
 			<p>
-				Hey there! My name is Benjamin, I am 25 years old, and I am a
+				Hey there! My name is
+				Benjamin, I am 25 years old, and I am a
 				wanna-be artist, writer, web developer, UNIX enthusiast, but most
 				importantly, I am me.
 			</p>
@@ -18,10 +20,14 @@ import IndexLayout from '../layouts/IndexLayout.astro'
 				those times are long gone, sadly.
 			</p>
 		</div>
+
 		<img
 			src={Avatar.src}
 			alt=""
 			class="w-full md:w-60 h-full md:ml-auto rounded"
 		/>
-		</div>
+	</div>
+
+	<h2 class="pt-4 text-bluom-lighter text-xl font-bold">Reading List</h2>
+	<ReadingList />
 </IndexLayout>

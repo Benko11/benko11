@@ -1,5 +1,6 @@
 ---
 import '../css/global.css';
+import Navigation from '../components/Navigation.astro'
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -9,9 +10,13 @@ import '../css/global.css';
     <meta name="keywords" content="">
 	<title>benko11</title>
 </head>
-<body class="bg-bluom-dark min-h-screen font-display text-bluom-light selection:bg-bluom-select flex flex-col items-center">
-	<div class="w-[800px] max-w-[95%] pt-8 md:pt-36">
-		<slot />
-	</div>
+<body class="font-display">
+    <Navigation />
+
+    <div class="bg-bluom-dark min-h-screen text-bluom-light selection:bg-bluom-select flex flex-col items-center">
+        <div class="w-[800px] max-w-[95%] pt-8 md:pt-36">
+            <slot />
+        </div>
+    </div>
 </body>
 </html>
