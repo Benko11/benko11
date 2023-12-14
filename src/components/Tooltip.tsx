@@ -18,7 +18,7 @@ export default function Tooltip({ children, label }: TooltipProps) {
       <div
         className={`${
           show ? "block" : "hidden"
-        } text-bluom-light bg-black text-sm p-2 rounded -mt-4`}
+        } text-bluom-light bg-black text-xs p-2 rounded -mt-6 select-none`}
       >
         {label}
       </div>
