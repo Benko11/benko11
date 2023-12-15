@@ -3,3 +3,7 @@
   src: url("../assets/fonts/SFMonoLigaturized-Regular.ttf");
   font-weight: normal;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

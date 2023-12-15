@@ -2,6 +2,7 @@
 import Avatar from '../assets/Benson-Dunwoody-Looking-Cool.png';
 import IndexLayout from '../layouts/IndexLayout.astro'
 import ReadingList from '../components/ReadingList.astro';
+import QuickFacts from '../components/QuickFacts/QuickFacts.astro';
 
 const getAge = (birthDate: Date) => {
 	const today = new Date();
@@ -38,6 +39,8 @@ const getAge = (birthDate: Date) => {
 			class="w-full md:w-60 h-full md:ml-auto rounded"
 		/>
 	</div>
+
+	<QuickFacts />
 
 	<h2 class="pt-8 text-bluom-lighter text-xl font-bold">Reading List</h2>
 	<ReadingList />

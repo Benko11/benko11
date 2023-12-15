@@ -1,0 +1,8 @@
+---
+const {category, value, link} = Astro.props
+---
+<tr>
+    <th class="text-right p-4">{category}</th>
+    
+    <td class="p-4">{link !== '' && link != null ? <a href={link} class="underline hover:no-underline focus-within:no-underline" target="_blank">{value}</a> : <span>{value}</span>}</td>
+</tr>

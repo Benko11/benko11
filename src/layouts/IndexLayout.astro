@@ -1,6 +1,6 @@
 ---
 import '../css/global.css';
-import Navigation from '../components/Navigation.astro'
+import Navigation from '../components/Navigation/Navigation.astro'
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@ import Navigation from '../components/Navigation.astro'
     <Navigation />
 
     <div class="bg-bluom-dark min-h-screen text-bluom-light selection:bg-bluom-select flex flex-col items-center">
-        <div class="w-[800px] max-w-[95%] pt-8 md:pt-36">
+        <div class="w-[800px] max-w-[95%] pt-8 pb-36 md:pt-36 md:pb-8">
             <slot />
         </div>
     </div>
