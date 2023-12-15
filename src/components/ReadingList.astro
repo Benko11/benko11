@@ -2,7 +2,6 @@
 const raw = await fetch(`${import.meta.env.SERVER_URL}/data/reading-list.txt`);
 const data = await raw.text();
 const books = data.split('\n').filter(item => item !== '').map(line => line.split(';').map(item => item.trim()))
-console.log(import.meta.env.SERVER_URL)
 ---
 
 <div class="flex flex-col gap-2 text-sm mt-4">
