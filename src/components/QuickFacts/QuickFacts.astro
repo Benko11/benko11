@@ -10,5 +10,7 @@ const lines = text.split('\n').map(line => line.split(': ').map(sub => sub.trim(
         <col class="bg-bluom-select-tint" />
         <col class="w-[55%] md:w-[70%]" />
     </colgroup>
-    {lines.map(line => line.length > 2 ? <QuickFactItem category={line[0]} value={line[1]} link={line[2]} /> : <QuickFactItem category={line[0]} value={line[1]} />)}
+    {lines.map(line => line.length > 2 ?
+        <QuickFactItem category={line[0]} value={line[1]} link={line[2]} /> :   <QuickFactItem category={line[0]} value={line[1]} />
+    )}
 </table>
