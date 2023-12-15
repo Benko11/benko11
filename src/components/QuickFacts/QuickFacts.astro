@@ -1,15 +1,14 @@
 ---
-import QuickFactItem from './QuickFactItem.astro'
+import QuickFactItem from './QuickFactItem.astro';
+
+const raw = await fetch(`${import.meta.env.SERVER_URL}/data/quick-facts.txt`)
+const text = await raw.text()
+const lines = text.split('\n').map(line => line.split(': ').map(sub => sub.trim()))
 ---
-<table class="table-auto w-full mt-4">
+<table class="table-auto w-full mt-4 select-none">
     <colgroup>
         <col class="bg-bluom-select-tint" />
         <col class="w-[55%] md:w-[70%]" />
     </colgroup>
-    <QuickFactItem category="Pronouns" value="he/they" />
-    <QuickFactItem category="Gender" value="Non-binary" />
-    <QuickFactItem category="Favourite band" value="Radiohead" />
-    <QuickFactItem category="Partner" value="93pigeons" link="https://93pigeons.tumblr.com" />
-    <QuickFactItem category="Favourite colour" value="Nebula Blue" />
-    <QuickFactItem category="Favourite game" value="Supaplex" />
+    {lines.map(line => line.length > 2 ? <QuickFactItem category={line[0]} value={line[1]} link={line[2]} /> : <QuickFactItem category={line[0]} value={line[1]} />)}
 </table>
