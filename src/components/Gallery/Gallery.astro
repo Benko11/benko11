@@ -2,7 +2,7 @@
 import Slideshow from './Slideshow';
 import fs from 'fs/promises';
 
-const images = (await fs.readdir('./public/gallery')).map(item => `/gallery/${item}`);
+const images = (await fs.readdir('./public/gallery')).map((item: string) => `/gallery/${item}`);
 ---
 
 <div class="mt-2">
