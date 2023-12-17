@@ -1,0 +1,9 @@
+[
+  {
+    "icon": "ri:tumblr-fill",
+    "link": "https://666rigbys.tumblr.com",
+    "label": "Tumblr"
+  },
+  { "icon": "mdi:pen", "link": "/blog", "label": "Blog" },
+  { "icon": "clarity:flask-solid", "link": "#", "label": "Lab" }
+]

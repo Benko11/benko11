@@ -1,15 +1,21 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import _ from "lodash";
+import ChevronLeft from "./ChevronLeft";
 import NavigationButton from "./NavigationButton";
 
 interface SlideshowProps {
-  images: string[];
+  images: any[];
   size: number;
 }
 
 export default function Slideshow({ images, size }: SlideshowProps) {
   const [current, setCurrent] = useState<number>(0);
-  const [displayedImages, setDisplayedImages] = useState<string[]>([]);
+  const [displayedImages, setDisplayedImages] = useState<any[]>([]);
+
+  const handleShuffle = () => {
+    setDisplayedImages(_.take(_.shuffle(images), size));
+    setCurrent(0);
+  };
 
   useEffect(() => {
     handleShuffle();
@@ -33,17 +39,12 @@ export default function Slideshow({ images, size }: SlideshowProps) {
     setCurrent((prev) => prev - 1);
   };
 
-  const handleShuffle = () => {
-    setDisplayedImages(_.take(_.shuffle(images), size));
-    setCurrent(0);
-  };
-
   return (
     <>
       <div className="w-full flex overflow-hidden relative select-none group rounded-lg">
         {displayedImages.map((image) => (
           <img
-            src={image}
+            src={image.default.src}
             alt=""
             key={image}
             className="rounded-lg transition-all"

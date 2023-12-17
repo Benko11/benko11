@@ -1,30 +1,23 @@
+import ChevronLeft from "./ChevronLeft";
+import ChevronRight from "./ChevronRight";
+
 interface NavigationButtonProps {
   side: "left" | "right";
   onClick: () => void;
 }
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronRight,
-  faChevronLeft,
-} from "@fortawesome/free-solid-svg-icons";
 
 export default function NavigationButton({
   side,
   onClick,
 }: NavigationButtonProps) {
   return (
-    <div
-      className={`absolute flex items-center text-white bg-black/20 h-full ${
-        side === "left" ? "left-" : "right-"
-      }0 px-4 cursor-pointer backdrop-blur-lg invisible group-hover:visible rounded-${
+    <button
+      className={`invisible group-hover:visible backdrop-blur-lg absolute bg-black/20 hover:bg-black/30 transition-all h-full px-2 text-white ${side}-0 px-2 backdrop-blur-lg invisible group-hover:visible rounded-${
         side === "left" ? "s" : "e"
-      }-lg hover:bg-black/30 transition-all`}
+      }-lg hover:bg-black/30`}
       onClick={onClick}
     >
-      <FontAwesomeIcon
-        icon={side === "left" ? faChevronLeft : faChevronRight}
-        className="w-4 cursor-pointer"
-      />
-    </div>
+      {side === "left" ? <ChevronLeft /> : <ChevronRight />}
+    </button>
   );
 }

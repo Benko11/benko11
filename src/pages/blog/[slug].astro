@@ -1,0 +1,36 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import GlobalLayout from '../../layouts/GlobalLayout.astro';
+export async function getStaticPaths() {
+    const blogEntries = await getCollection('blog');
+    return blogEntries.map(entry => {
+        return {params: {slug: entry.slug}, props: {entry}}
+    })
+}
+import Icon from 'astro-icon'
+
+const { entry } = Astro.props;
+const {Content} = await entry.render();
+
+const renderImage = () => {
+    if (entry.data.image == null) return
+
+    let url = `/blog/${entry.data.image}`
+    if (entry.data.image.includes('http')) url = entry.data.image
+
+    return url;
+}
+---
+
+<BlogLayout>
+    <h1 class="text-3xl font-bold text-bluom-lighter select-none">{entry.data.title}</h1>
+
+    <div class="flex justify-center mb-2 max-w-full select-none">
+        {renderImage() != null && <img src={renderImage()} alt={entry.data.title}>}
+    </div>
+    <section class="leading-7 flex flex-col gap-4 mt-2 select-none">
+        <Content />
+    </section>
+    
+</BlogLayout>

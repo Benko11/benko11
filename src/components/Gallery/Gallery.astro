@@ -1,22 +1,8 @@
 ---
 import Slideshow from './Slideshow';
-// import fs from 'fs/promises';
-
-// const images = (await fs.readdir('./public/gallery')).map((item: string) => `/gallery/${item}`);
-// console.log(images)
+const images = await Astro.glob('../../assets/gallery/*')
 ---
 
 <div class="mt-2">
-    <Slideshow client:load images={[
-        '/gallery/758GfhR6_4x.webp',
-        '/gallery/S2E26A_McBrides_hug_with_hearts.webp',
-        '/gallery/S2e15_Trust_no_one.webp',
-        '/gallery/S5E20B_Lana,_we_would_love_to_help_your_animals,_but_a_flying_squirrel.webp',
-        '/gallery/YGhqeIVi_4x.webp',
-        '/gallery/vlcsnap-2023-10-22-01h01m41s422.webp',
-        '/gallery/vlcsnap-2023-12-11-01h04m31s074.webp',
-        '/gallery/vlcsnap-2023-12-11-02h21m58s664.webp',
-        '/gallery/vlcsnap-2023-12-15-23h33m22s811.webp'
-      ]
-      } size={5} />
+    <Slideshow client:load images={[...images]} size={6} />
 </div>

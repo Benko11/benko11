@@ -1,8 +1,8 @@
 ---
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const {icon, link, label} = Astro.props; 
+import Icon from 'astro-icon'
 ---
 <a href={link} target={link.includes('http') ? '_blank' : '_self'} class="hover:bg-bluom-dark p-3 flex flex-col gap-2 w-20 items-center">
-    <FontAwesomeIcon icon={icon} className="h-4" />
+    <Icon name={icon} class="h-6" />
     <div class="uppercase text-xs">{label}</div>
 </a>
