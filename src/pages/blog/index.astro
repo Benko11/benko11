@@ -11,7 +11,7 @@ const displayedFiles = files.filter(file => file.frontmatter.publishedAt != null
 const renderDate = (timestamp: number) => {
     const momentTimestamp = moment(timestamp);
     const now = moment();
-    const diff = now.diff(timestamp)
+    const diff = now.diff(momentTimestamp)
     return moment.duration(diff).humanize() + ' ago'
 }
 ---

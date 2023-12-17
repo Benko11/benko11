@@ -7,6 +7,7 @@ interface TooltipProps {
 
 export default function Tooltip({ children, label }: TooltipProps) {
   const [show, setShow] = useState<boolean>(false);
+
   return (
     <div
       className="flex flex-col items-center font-display"

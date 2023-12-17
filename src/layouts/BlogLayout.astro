@@ -2,6 +2,7 @@
 import '../css/global.css';
 import Navigation from '../components/Navigation/Navigation.astro'
 import GlobalLayout from './GlobalLayout.astro';
+import NavigationItemDesktop from '../components/Navigation/NavigationItemDesktop.astro';
 ---
 <GlobalLayout>
     <Navigation />
@@ -9,6 +10,10 @@ import GlobalLayout from './GlobalLayout.astro';
     <div class="bg-bluom-dark min-h-screen text-bluom-light selection:bg-bluom-select flex flex-col items-center">
         <div class="w-[800px] max-w-[95%] pt-8 pb-36 md:pt-36 md:pb-8">
             <slot />
+
+            <div class="fixed top-0 left-0">
+                <NavigationItemDesktop link="/" icon="majesticons:home-line" label="Home" />
+            </div>
         </div>
     </div>
 </GlobalLayout>
