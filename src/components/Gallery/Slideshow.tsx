@@ -58,7 +58,7 @@ export default function Slideshow({ images, size }: SlideshowProps) {
       <div className="flex justify-center my-2 gap-2 md:gap-1">
         {displayedImages.map((_, index) => (
           <div
-            className={`w-2 h-2 md:w-4 md:h-4 rounded-full cursor-pointer ${
+            className={`w-4 h-4 md:w-2 md:h-2 rounded-full cursor-pointer ${
               index === current ? "bg-white" : "border border-white"
             }`}
             onClick={() => setCurrent(index)}
