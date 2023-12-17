@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import _ from "lodash";
-import ChevronLeft from "./ChevronLeft";
 import NavigationButton from "./NavigationButton";
 
 interface SlideshowProps {

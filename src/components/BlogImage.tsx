@@ -14,7 +14,7 @@ export default function BlogImage({
       <img
         src={link.includes("http") ? link : `/blog/${link}`}
         alt={description || ""}
-        className={className || ""}
+        class={className || ""}
       />
       <div className="text-sm">{description}</div>
     </div>
