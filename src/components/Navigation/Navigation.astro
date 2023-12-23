@@ -5,10 +5,10 @@ import { getCollection } from 'astro:content';
 
 const links = [...(await getCollection('links'))[0].data];
 ---
-<div class="hidden fixed right-0 top-0 md:flex flex-row-reverse font-sans-serif">
+<div class="hidden fixed right-0 top-0 md:flex flex-row-reverse font-sans-serif z-50">
     {links.map(link => <NavigationItemDesktop icon={link.icon} link={link.link} label={link.label} />)}
 </div>
-<div class="flex fixed md:hidden bottom-0 left-0 bg-black text-bluom-light w-full">
+<div class="flex fixed md:hidden bottom-0 left-0 bg-black text-bluom-light w-full z-50">
     <div class="mx-auto flex flex-row-reverse">
         {links.map(link => <NavigationItemMobile icon={link.icon} link={link.link} label={link.label} />)}
     </div>

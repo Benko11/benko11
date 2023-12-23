@@ -2,18 +2,14 @@
 import { getEntries, getEntry } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import moment from 'moment';
+import BlogTimestamp from "../../components/BlogTimestamp";
 
 const files = await Astro.glob('../../content/blog/*.mdx');
 const displayedFiles = files.filter(file => file.frontmatter.publishedAt != null).sort((a, b) => {
     return (b.frontmatter.publishedAt - a.frontmatter.publishedAt)
 })
 
-const renderDate = (timestamp: number) => {
-    const momentTimestamp = moment(timestamp);
-    const now = moment();
-    const diff = now.diff(momentTimestamp)
-    return moment.duration(diff).humanize() + ' ago'
-}
+
 ---
 <BlogLayout>
     <div class="flex flex-col gap-6">
@@ -25,7 +21,7 @@ const renderDate = (timestamp: number) => {
         return <div>
             <a href={`/blog/${match?.split('.mdx')[0]}`} class="my-1">
                 <h2 class="text-xl font-bold text-bluom-lighter">{frontmatter.title}</h2>
-                <div class="text-xs -mt-1 mb-2">{renderDate(frontmatter.publishedAt)}</div>
+                <BlogTimestamp timestamp={frontmatter.publishedAt} client:load />
                 <div>{frontmatter.description}</div>
             </a>
         </div>

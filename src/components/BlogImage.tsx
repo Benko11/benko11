@@ -1,7 +1,7 @@
 interface BlogImageProps {
   link: string;
   description?: string;
-  className: string;
+  className?: string;
 }
 
 export default function BlogImage({
@@ -14,7 +14,7 @@ export default function BlogImage({
       <img
         src={link.includes("http") ? link : `/blog/${link}`}
         alt={description || ""}
-        className={className}
+        className={className || ""}
       />
       <div className="text-sm">{description}</div>
     </div>

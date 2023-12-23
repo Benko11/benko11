@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import NavigationItemDesktop from "./NavigationItemDesktop.astro";
+import NavigationItemMobile from "./NavigationItemMobile.astro";
+
+const links = [...(await getCollection('links'))[0].data];
+---
+<div class="flex fixed md:hidden bottom-0 left-0 bg-black text-bluom-light w-full z-50">
+    <div class="mx-auto flex flex-row-reverse">
+        {links.map(link => <NavigationItemMobile icon={link.icon} link={link.link} label={link.label} />)}
+        <NavigationItemMobile link="/" icon="majesticons:home-line" label="Home" />
+    </div>
+</div>
+
+<div class="hidden md:flex">
+    <div class="fixed top-0 right-0 flex flex-row-reverse font-sans-serif z-50">
+        {links.map(link => <NavigationItemDesktop icon={link.icon} link={link.link} label={link.label} />)}
+    </div>
+
+    <div class="fixed top-0 left-0 flex-row-reverse font-sans-serif z-50">
+        <NavigationItemDesktop link="/" icon="majesticons:home-line" label="Home" />
+    </div>
+</div>
