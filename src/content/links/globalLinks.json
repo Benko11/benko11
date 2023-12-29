@@ -5,5 +5,5 @@
     "label": "Tumblr"
   },
   { "icon": "mdi:pen", "link": "/blog", "label": "Blog" },
-  { "icon": "clarity:flask-solid", "link": "#", "label": "Lab" }
+  { "icon": "clarity:flask-solid", "link": "/lab", "label": "Lab" }
 ]

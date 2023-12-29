@@ -1,6 +1,6 @@
 ---
 import { getEntries, getEntry } from "astro:content";
-import BlogLayout from "../../layouts/BlogLayout.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
 import moment from 'moment';
 import BlogTimestamp from "../../components/BlogTimestamp";
 
@@ -11,7 +11,7 @@ const displayedFiles = files.filter(file => file.frontmatter.publishedAt != null
 
 
 ---
-<BlogLayout>
+<PageLayout>
     <div class="flex flex-col gap-6">
         {displayedFiles.length < 1 && <p>No articles found.</p>}
     {displayedFiles.map(file => {
@@ -27,4 +27,4 @@ const displayedFiles = files.filter(file => file.frontmatter.publishedAt != null
         </div>
     })}
     </div>
-</BlogLayout>
+</PageLayout>

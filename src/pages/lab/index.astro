@@ -1,0 +1,15 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import { getCollection } from "astro:content";
+
+const labLinks = [...(await getCollection('lab'))[0].data]
+---
+<PageLayout>
+    <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-2">
+        {labLinks.map(labLink => <a href={labLink.link} target="_blank" class="p-4 px-6 border-bluom-select-tint border-2 rounded-lg flex flex-col gap-2 hover:bg-bluom-select-tint hover:text-white focus:bg-bluom-select-tint focus:text-white">
+            <div class="text-md font-bold">{labLink.title}</div>
+            <div class="text-xs line-clamp-3">{labLink.link}</div>
+        </a>)}
+        
+    </div>
+</PageLayout>

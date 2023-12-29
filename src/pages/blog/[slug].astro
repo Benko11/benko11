@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
-import BlogLayout from '../../layouts/BlogLayout.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
 export async function getStaticPaths() {
     const blogEntries = await getCollection('blog');
     return blogEntries.map(entry => {
@@ -21,7 +21,7 @@ const renderImage = () => {
 }
 ---
 
-<BlogLayout>
+<PageLayout>
     <h1 class="text-3xl font-bold text-bluom-lighter select-none">{entry.data.title}</h1>
 
     <div class="flex justify-center mb-2 max-w-full select-none">
@@ -31,4 +31,4 @@ const renderImage = () => {
         <Content />
     </section>
     
-</BlogLayout>
+</PageLayout>
