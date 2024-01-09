@@ -5,11 +5,15 @@ import { getCollection } from "astro:content";
 const labLinks = [...(await getCollection('lab'))[0].data]
 ---
 <PageLayout>
-    <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-2">
-        {labLinks.map(labLink => <a href={labLink.link} target="_blank" class="p-4 px-6 border-bluom-select-tint border-2 rounded-lg flex flex-col gap-2 hover:bg-bluom-select-tint hover:text-white focus:bg-bluom-select-tint focus:text-white">
-            <div class="text-md font-bold">{labLink.title}</div>
-            <div class="text-xs line-clamp-3">{labLink.link}</div>
-        </a>)}
-        
+    <div class="grid lg:grid-cols-2 gap-2">
+        {labLinks.map(labLink => <div class=" border-bluom-select-tint border-2 rounded-lg flex flex-col gap-2 ">
+                <div class="p-4 px-6">
+                    <div class="text-md font-bold">{labLink.title}</div>
+                    <a href={labLink.link} target="_blank" class="underline"><div class="text-xs">{labLink.link}</div></a>
+                </div>
+                
+                {<a href={labLink.live_link} target="_blank" class="text-sm mt-auto bg-bluom-select-tint uppercase block text-center p-4 rounded-b hover:bg-bluom-select focus:bg-bluom-select">See it live</a>}
+
+        </div>)}
     </div>
 </PageLayout>

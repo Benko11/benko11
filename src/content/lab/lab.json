@@ -1,14 +1,17 @@
 [
   {
     "link": "https://github.com/benko11/character-picker",
+    "live_link": "https://character-picker.vercel.app/",
     "title": "Character Picker"
   },
   {
     "link": "https://github.com/Benko11/app-idea-christmas-lights",
+    "live_link": "https://lucid-jennings-fd77de.netlify.app/",
     "title": "Christmas Lights"
   },
   {
-    "link": "https://candid-mousse-5b640f.netlify.app/",
+    "link": "https://github.com/Benko11/notes",
+    "live_link": "https://candid-mousse-5b640f.netlify.app/",
     "title": "Notes"
   }
 ]
